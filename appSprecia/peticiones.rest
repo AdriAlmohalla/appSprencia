@@ -1,0 +1,11 @@
+###
+GET http://localhost:3000/api/actividades
+
+###
+GET http://localhost:3000/api/usuarios
+
+###
+GET http://localhost:3000/api/opiniones/sprecia
+
+###
+GET http://localhost:3000/api/opiniones/actividad
