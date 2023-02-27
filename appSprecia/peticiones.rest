@@ -2,13 +2,16 @@
 GET http://localhost:3000/api/actividades
 
 ###
+GET http://localhost:3000/api/actividades/3
+
+###
 GET http://localhost:3000/api/usuarios
 
 ###
-GET http://localhost:3000/api/opiniones/sprecia
+GET http://localhost:3000/api/opiniones/sprencia
 
 ###
-GET http://localhost:3000/api/opiniones/actividad
+GET http://localhost:3000/api/opiniones/actividad/1
 
 ###
 GET http://localhost:3000/api/horarios
