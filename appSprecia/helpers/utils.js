@@ -1,4 +1,6 @@
 // En el archivo utils creamos funciones que nos sirvan a lo largo de todo el proyecto
+const dayjs = require('dayjs')
+const jwt = require('jsonwebtoken')
 
 /**
  * Ejecuta una sentencia sql contra la BBDD y nos devuelve un array con el resultado
@@ -35,7 +37,19 @@ const executeQueryOne = (sql, arr) => {
   })
 }
 
+
+// Usarmos la libreria jsonwebtoken para crear el token pasandole el id del usuario y la fecha de expiracion encriptada
+const createToken = (user) => {
+  const obj = {
+    user_id: user.id,
+    exp_date: dayjs().add(5, 'minutes').unix()
+  }
+
+  return jwt.sign(obj, 'token')
+}
+
 module.exports = {
   executeQuery,
-  executeQueryOne
+  executeQueryOne,
+  createToken
 }
