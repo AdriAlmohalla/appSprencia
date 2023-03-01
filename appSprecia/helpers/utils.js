@@ -42,7 +42,7 @@ const executeQueryOne = (sql, arr) => {
 const createToken = (user) => {
   const obj = {
     user_id: user.id,
-    exp_date: dayjs().add(5, 'minutes').unix()
+    exp_date: dayjs().add(60, 'minutes').unix()
   }
 
   return jwt.sign(obj, 'token')

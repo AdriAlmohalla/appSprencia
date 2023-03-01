@@ -1,8 +1,8 @@
 const { executeQuery, executeQueryOne } = require("../helpers/utils")
 
 const getAll = () => {
-  // utilizamos la función para ejecutar queries contra nuestra base de datos, sacamos todas las actividades de Sprecia
-  return executeQuery('SELECT * FROM actividades a JOIN horarios h ON a.horario_id = h.id_horario', [])
+  // utilizamos la función para ejecutar queries contra nuestra base de datos, sacamos todas las actividades de Sprecia ordenadas por precio ascendente
+  return executeQuery('SELECT * FROM actividades a JOIN horarios h ON a.horario_id = h.id_horario ORDER BY precio ASC', [])
 }
 
 const getById = (id) => {

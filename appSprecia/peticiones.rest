@@ -15,3 +15,20 @@ GET http://localhost:3000/api/opiniones/actividad/1
 
 ###
 GET http://localhost:3000/api/horarios
+
+###
+POST http://localhost:3000/api/proveedoras
+Content-Type: application/json
+
+{
+  "nombre": "Empresa Prueba",
+  "web": "Empresa Prueba",
+  "localizacion": "Empresa Prueba",
+  "categoria_id": "1",
+  "actividad": "Empresa Prueba",
+  "razon": "Empresa Prueba",
+  "telefono": "Empresa Prueba"
+}
+
+
+
