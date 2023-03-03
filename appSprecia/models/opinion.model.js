@@ -1,4 +1,4 @@
-const { executeQuery, executeQueryOne } = require("../helpers/utils")
+const { executeQuery } = require("../helpers/utils")
 
 const getById = (id) => {
   // utilizando nuestra función para ejecutar queries, sacamos todas las opiniones de las actividades con el nombre y los apellidos del usuario que lo ha escrito

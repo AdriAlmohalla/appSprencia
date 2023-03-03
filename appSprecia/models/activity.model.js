@@ -1,4 +1,4 @@
-const { executeQuery, executeQueryOne } = require("../helpers/utils")
+const { executeQuery } = require("../helpers/utils")
 
 const getAll = () => {
   // utilizamos la función para ejecutar queries contra nuestra base de datos, sacamos todas las actividades de Sprecia ordenadas por precio ascendente

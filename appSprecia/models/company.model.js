@@ -1,4 +1,4 @@
-const { executeQuery, executeQueryOne } = require("../helpers/utils")
+const { executeQuery } = require("../helpers/utils")
 
 const add = ({ nombre, web, localizacion, categoria_id, actividad, razon, telefono }) => {
   // utilizando nuestra función para ejecutra queries contra nuestra base de datos, sacamos todas las actividades de Sprecia
