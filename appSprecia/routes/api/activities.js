@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const upload = require('../../config/multerConfig');
 
 const { response } = require('express');
 const Actividad = require('../../models/activity.model')
@@ -15,9 +16,20 @@ router.get('', async (req, res) => {
   }
 })
 
+router.put('/edit/:id', upload.single('image'), async (req, res) => {
+
+  try {
+    const imagePath = req.file.path;
+    const activities = await Actividad.uploadImage(req.params.id, imagePath)
+    res.status(200).json({ message: 'Image updated successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error updating image', error: error.message });
+  }
+})
+
 router.get('/:id', async (req, res) => {
 
-  // lanzamos la promesa y utilizamos el try y el catch para comprobar si hay algún error en la solicitud, además de pasamos el id que viene de la url a la función getById para que haga la busqueda de una única actividad
   try {
     const activities = await Actividad.getById(req.params.id)
     res.json(activities)
@@ -25,5 +37,6 @@ router.get('/:id', async (req, res) => {
     res.json({ error: error.message })
   }
 })
+
 
 module.exports = router
